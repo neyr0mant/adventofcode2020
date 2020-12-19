@@ -1,10 +1,11 @@
 import os
 from execution_time import execution_time
 # link task https://adventofcode.com/2020/day/18
-path_to_file = os.path.join(".", r"data_task\18.txt")
+path_to_data = os.path.join(".", r"data_task\18.txt")
 
-def read_data(path_to_file):
-  with open(path_to_file) as f:
+
+def read_data(path):
+  with open(path) as f:
       return [i.strip("\n ") for i in f]
 
 def get_sum(str_s, step):
@@ -24,6 +25,7 @@ def get_sum(str_s, step):
           sum_all = sum_all*i
     return sum_all
 
+
 def get_sum_all_for_str(str_in, step):
     """
     :param str_in: Input string with brackets
@@ -39,7 +41,8 @@ def get_sum_all_for_str(str_in, step):
         sum_all += sum_str_new
     return get_sum(str_in, step)
 
-data = read_data(path_to_file)
+
+data = read_data(path_to_data)
 
 @execution_time
 def print_solve(test_data, step):
