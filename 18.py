@@ -25,10 +25,10 @@ def get_sum_all_for_str(str_in, step):
     sum_all = 0
     while "(" in str_in:
         index_r = str_in.rindex("(")
-        index_l = str_in[index_r+1:].index(")") + index_r+1
+        index_l = str_in[index_r + 1:].index(")") + index_r+1
         str_new = str_in[index_r + 1:index_l]
         sum_str_new = get_sum(str_new, step)
-        str_in = str_in[:index_r] + "%s" % sum_str_new + str_in[index_l+1:]
+        str_in = str_in[:index_r] + "%s" % sum_str_new + str_in[index_l + 1:]
         sum_all += sum_str_new
     return get_sum(str_in, step)
 
