@@ -4,11 +4,11 @@ path_to_file = os.path.join(".", r"test_data\18.txt")
 
 def read_data(path_to_file):
   with open(path_to_file) as f:
-      return [str_.replace("\n", "") for str_ in f]
+      return [str_.replace("\n", "").replace(" ", "") for str_ in f]
 
 def get_summ(str_s, first=True):
   sum_all = 1
-  list_s = str_s.replace(" ", "").split("*")
+  list_s = str_s.split("*")
   if first:
     sum_all = 1
     for i in list_s:
