@@ -8,7 +8,7 @@ def read_data(path_to_file):
       return [i.replace("\n", "").replace(" ", "") for i in f]
 
 
-def get_sum(str_s, step=True):
+def get_sum(str_s, step=1):
     sum_all = 1
     list_s = str_s.split("*")
     if step == 1:
@@ -21,7 +21,7 @@ def get_sum(str_s, step=True):
           sum_all = sum_all*i
     return sum_all
 
-def get_sum_all_for_str(str_in, step=True):
+def get_sum_all_for_str(str_in, step=1):
     sum_all = 0
     while "(" in str_in:
         index_r = str_in.rindex("(")
