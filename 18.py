@@ -1,4 +1,5 @@
 import os
+from leadtime import execution_time
 
 path_to_file = os.path.join(".", r"test_data\18.txt")
 
@@ -32,6 +33,11 @@ def get_sum_all_for_str(str_in, first=True):
     return get_sum(str_in, first=first)
 
 data = read_data(path_to_file)
-print(sum([get_sum_all_for_str(i) for i in data]))
-print(sum([get_sum_all_for_str(i, first=False) for i in data]))
+
+@execution_time
+def get_solve(test_data, first=True):
+    print(sum([get_sum_all_for_str(i, first=first) for i in test_data]))
+
+get_solve(data)
+get_solve(data, first=False)
 
