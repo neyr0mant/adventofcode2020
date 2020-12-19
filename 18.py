@@ -8,10 +8,10 @@ def read_data(path_to_file):
       return [i.replace("\n", "").replace(" ", "") for i in f]
 
 
-def get_sum(str_s, first=True):
+def get_sum(str_s, step=True):
     sum_all = 1
     list_s = str_s.split("*")
-    if first:
+    if step == 1:
         for i in list_s:
           j = i.split("+")
           sum_all = sum_all*int(j[0]) + sum([int(i) for i in j[1:]])
@@ -21,23 +21,23 @@ def get_sum(str_s, first=True):
           sum_all = sum_all*i
     return sum_all
 
-def get_sum_all_for_str(str_in, first=True):
+def get_sum_all_for_str(str_in, step=True):
     sum_all = 0
     while "(" in str_in:
         index_r = str_in.rindex("(")
         index_l = str_in[index_r+1:].index(")") + index_r+1
         str_new = str_in[index_r + 1:index_l]
-        sum_str_new = get_sum(str_new, first=first)
+        sum_str_new = get_sum(str_new, step=step)
         str_in = str_in[:index_r] + "%s" % sum_str_new + str_in[index_l+1:]
         sum_all += sum_str_new
-    return get_sum(str_in, first=first)
+    return get_sum(str_in, step=step)
 
 data = read_data(path_to_file)
 
 @execution_time
-def print_solve(test_data, first=True):
-    print("Answer step %s: %s" % (1 if first else 2, sum([get_sum_all_for_str(i, first=first) for i in test_data])))
+def print_solve(test_data, step=1):
+    print("Answer step %s: %s" % (step, sum([get_sum_all_for_str(i, step=step) for i in test_data])))
 
 print_solve(data)
-print_solve(data, first=False)
+print_solve(data, step=2)
 
