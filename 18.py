@@ -5,8 +5,7 @@ path_to_file = os.path.join(".", r"data_task\18.txt")
 
 def read_data(path_to_file):
   with open(path_to_file) as f:
-      return [i.replace("\n", "").replace(" ", "") for i in f]
-
+      return [i.strip("\n").strip(" ") for i in f]
 
 def get_sum(str_s, step):
     sum_all = 1
