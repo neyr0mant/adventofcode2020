@@ -8,6 +8,10 @@ def read_data(path_to_file):
       return [i.strip("\n ") for i in f]
 
 def get_sum(str_s, step):
+    """
+    :param str_s: Input string without brackets
+    :param step: Task number
+    """
     sum_all = 1
     list_s = str_s.split("*")
     if step == 1:
@@ -21,6 +25,10 @@ def get_sum(str_s, step):
     return sum_all
 
 def get_sum_all_for_str(str_in, step):
+    """
+    :param str_in: Input string with brackets
+    :param step: Task number
+    """
     sum_all = 0
     while "(" in str_in:
         index_r = str_in.rindex("(")
