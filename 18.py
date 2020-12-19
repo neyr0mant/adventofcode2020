@@ -35,9 +35,9 @@ def get_sum_all_for_str(str_in, first=True):
 data = read_data(path_to_file)
 
 @execution_time
-def get_solve(test_data, first=True):
+def print_solve(test_data, first=True):
     print("Answer step %s: %s" % (1 if first else 2, sum([get_sum_all_for_str(i, first=first) for i in test_data])))
 
-get_solve(data)
-get_solve(data, first=False)
+print_solve(data)
+print_solve(data, first=False)
 
