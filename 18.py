@@ -6,8 +6,6 @@ def read_data(path_to_file):
   with open(path_to_file) as f:
       return [str_.replace("\n", "") for str_ in f]
 
-data = read_data(path_to_file)
-
 def get_summ(str_s, first=True):
   sum_all = 1
   list_s = str_s.replace(" ", "").split("*")
@@ -33,6 +31,7 @@ def get_summ_all_for_str(str_in, first=True):
       summ_all += sum_str_new
     return get_summ(str_in, first=first)
 
+data = read_data(path_to_file)
 print(sum([get_summ_all_for_str(i) for i in data]))
 print(sum([get_summ_all_for_str(i, first=False) for i in data]))
 
