@@ -45,8 +45,8 @@ def get_sum_all_for_str(str_in, step):
 data = read_data(path_to_data)
 
 @execution_time
-def print_solve(test_data, step):
-    print("Answer step %s: %s" % (step, sum([get_sum_all_for_str(i, step) for i in test_data])))
+def print_solve(task_data, step):
+    print("Answer step %s: %s" % (step, sum([get_sum_all_for_str(i, step) for i in task_data])))
 
 print_solve(data, 1)
 print_solve(data, 2)
