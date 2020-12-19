@@ -1,7 +1,7 @@
 import os
 from leadtime import execution_time
-
-path_to_file = os.path.join(".", r"test_data\18.txt")
+# link task https://adventofcode.com/2020/day/18
+path_to_file = os.path.join(".", r"data_task\18.txt")
 
 def read_data(path_to_file):
   with open(path_to_file) as f:
