@@ -1,5 +1,5 @@
 import os
-from leadtime import execution_time
+from execution_time import execution_time
 # link task https://adventofcode.com/2020/day/18
 path_to_file = os.path.join(".", r"data_task\18.txt")
 
